@@ -6,9 +6,9 @@ namespace Adapter.Adaptee
     /// <summary>
     /// Adaptee class that cannot be changed.
     /// </summary>
-    public class TrafficHistory
+    public class TrafficHistoryAdaptee
     {
-        public TrafficHistory() { }
+        public TrafficHistoryAdaptee() { }
 
         public List<VehicleModel> GetHistory(string registration)
         {

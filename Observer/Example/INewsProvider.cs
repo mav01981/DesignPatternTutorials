@@ -2,5 +2,5 @@
 {
     string Name { get; }
 
-    void Update(NewsHandler newsHandler);
+    void Update(NewsHandlerSubject newsHandler);
 }

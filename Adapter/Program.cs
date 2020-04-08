@@ -14,8 +14,8 @@ namespace Adapter
             // The Adapter adapts the Adaptee to the Target.
             // The Adaptee is the interface that needs adapting(i.e.the one that cannot be refactored).
 
-            var traffic = new TrafficHistory(); //Adaptee.
-            IVehicleDetails target = new Vehicle(traffic); //Adapter
+            var traffic = new TrafficHistoryAdaptee(); 
+            IVehicleDetailsTarget target = new VehicleAdapter(traffic); 
 
             Console.WriteLine("Adaptee interface is incompatible with the client.");
             Console.WriteLine("But with adapter client can call it's method.");

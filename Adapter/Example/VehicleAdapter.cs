@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Adapter.Adapter
 {
-    public class Vehicle : IVehicleDetails
+    public class VehicleAdapter : IVehicleDetailsTarget
     {
-        private TrafficHistory _trafficHistory;
-        public Vehicle(TrafficHistory trafficHistory)
+        private TrafficHistoryAdaptee _trafficHistory;
+        public VehicleAdapter(TrafficHistoryAdaptee trafficHistory)
         {
             this._trafficHistory = trafficHistory;
         }

@@ -4,7 +4,7 @@ using System.Linq;
 /// <summary>
 /// Concrete Subject - Publisher
 /// </summary>
-public abstract class NewsHandler
+public abstract class NewsHandlerSubject
 {
     private readonly List<INewsProvider> newsProviders = new List<INewsProvider>();
 
@@ -12,11 +12,11 @@ public abstract class NewsHandler
     private Location location;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="NewsHandler"/> class.
+    /// Initializes a new instance of the <see cref="NewsHandlerSubject"/> class.
     /// </summary>
     /// <param name="story">Story.</param>
     /// <param name="location">Location.</param>
-    public NewsHandler(string story, Location location)
+    public NewsHandlerSubject(string story, Location location)
     {
         this.location = location;
         this.story = story;

@@ -1,4 +1,4 @@
-﻿public class NewsStory : NewsHandler
+﻿public class NewsStory : NewsHandlerSubject
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="NewsStory"/> class.

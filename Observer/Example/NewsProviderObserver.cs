@@ -3,15 +3,15 @@
 /// <summary>
 /// Concrete Observer.
 /// </summary>
-public class NewsProvider : INewsProvider
+public class NewsProviderObserver : INewsProvider
 {
     private readonly string name;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="NewsProvider"/> class.
+    /// Initializes a new instance of the <see cref="NewsProviderObserver"/> class.
     /// </summary>
     /// <param name="name">Name of news Provider.</param>
-    public NewsProvider(string name)
+    public NewsProviderObserver(string name)
     {
         this.name = name;
     }
@@ -20,7 +20,7 @@ public class NewsProvider : INewsProvider
     public string Name => this.name;
 
     /// <inheritdoc/>
-    public void Update(NewsHandler newsHandler)
+    public void Update(NewsHandlerSubject newsHandler)
     {
         if (newsHandler == null)
         {
