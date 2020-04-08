@@ -13,11 +13,12 @@ Facade is a structural design pattern that provides a simplified (but limited) i
 Adapter is a structural design pattern that allows objects with incompatible interfaces to collaborate.
 
 # Factory Method Pattern
-Adapter is a structural design pattern that allows objects with incompatible interfaces to collaborate.
+Factory method is a creational design pattern which solves 
+the problem of creating product objects without specifying their concrete classes.
 
 # Abstract Factory Pattern
-Factory Method is a creational design pattern that provides an interface for creating objects in a superclass,
-but allows subclasses to alter the type of objects that will be created.
+Abstract Factory is a creational design pattern
+that lets you produce families of related objects without specifying their concrete classes.
 
 
 
