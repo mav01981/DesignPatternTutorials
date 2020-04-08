@@ -4,5 +4,5 @@
     London,
     Vienna,
     Dublin,
-    NewYork
+    NewYork,
 }

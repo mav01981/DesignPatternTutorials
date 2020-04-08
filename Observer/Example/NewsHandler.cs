@@ -1,61 +1,87 @@
 ﻿using System.Collections.Generic;
-
+using System.Linq;
 
 /// <summary>
 /// Concrete Subject - Publisher
 /// </summary>
 public abstract class NewsHandler
 {
-    private List<INewsProvider> _newsProviders = new List<INewsProvider>();
+    private readonly List<INewsProvider> newsProviders = new List<INewsProvider>();
 
-    private string _story;
-    private Location _location;
+    private string story;
+    private Location location;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="NewsHandler"/> class.
+    /// </summary>
+    /// <param name="story">Story.</param>
+    /// <param name="location">Location.</param>
     public NewsHandler(string story, Location location)
     {
-        _location = location;
-        _story = story;
+        this.location = location;
+        this.story = story;
     }
 
-    public void Subscribe(INewsProvider newsProvider)
-    {
-        _newsProviders.Add(newsProvider);
-    }
-
-    public void UnSubscribe(INewsProvider newsProvider)
-    {
-        _newsProviders.Remove(newsProvider);
-    }
-    public void Notify()
-    {
-        foreach (INewsProvider newsProvider in _newsProviders)
-        {
-            newsProvider.Update(this);
-        }
-    }
-
+    /// <summary>
+    /// Gets or sets story.
+    /// </summary>
     public string Story
     {
-        get { return _story; }
+        get => this.story;
+
         set
         {
-            if (_story != value)
+            if (this.story != value)
             {
-                _story = value;
-                Notify();
+                this.story = value;
+                this.Notify();
             }
         }
     }
 
+    /// <summary>
+    /// Gets or sets location.
+    /// </summary>
     public Location Location
     {
-        get { return _location; }
+        get => this.location;
+
         set
         {
-            if (_location != value)
+            if (this.location != value)
             {
-                _location = value;
-                Notify();
+                this.location = value;
+                this.Notify();
             }
+        }
+    }
+
+    /// <summary>
+    /// cscsdc.
+    /// </summary>
+    /// <param name="newsProvider">Provider.</param>
+    public void Subscribe(INewsProvider newsProvider)
+    {
+        this.newsProviders.Add(newsProvider);
+    }
+
+    /// <summary>
+    /// UnSubscribe.
+    /// </summary>
+    /// <param name="provider">Provider.</param>
+    public void UnSubscribe(INewsProvider provider)
+    {
+        this.newsProviders.Remove(this.newsProviders.FirstOrDefault(x => x.Name == provider.Name));
+    }
+
+    /// <summary>
+    /// Notify.
+    /// </summary>
+    public void Notify()
+    {
+        foreach (INewsProvider newsProvider in this.newsProviders)
+        {
+            newsProvider.Update(this);
         }
     }
 }
