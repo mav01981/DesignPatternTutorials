@@ -18,6 +18,16 @@ namespace Command
             invoker.DoWork();
 
             Console.Read();
+
+            //Output
+            //Invoker: Executing Commands on Start
+            //SimpleCommand: Start Execute Command.
+            //Receiver: Email Sent.
+            //Receiver: Report Created.
+            //Invoker: Executing Commands on Finish
+            //SimpleCommand: Finish Execute Command.
+            //Receiver: Email Sent.
+            //Receiver: Report Created.
         }
     }
 }

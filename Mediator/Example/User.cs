@@ -16,16 +16,17 @@ namespace Mediator
             _logger = logger;
             _name = name;
         }
+
         public void Greet()
         {
-            _logger.LogInformation($"{_name} Greets hello");
+            _logger.LogInformation($"{_name} greets: hello");
 
             this._mediator.SendMessage(this, "A");
         }
 
         public void Respond()
         {
-            _logger.LogInformation($"{_name} responds hello");
+            _logger.LogInformation($"{_name} responds: hello");
         }
     }
 }

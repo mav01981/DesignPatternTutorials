@@ -18,6 +18,12 @@ namespace Strategy
             logger.LogInformation(Translator.Translate("Hello", new SpanishTranslator()));
 
             Console.Read();
+
+            //Output
+            //EnglishTranslator: Hello
+            //FrenchTranslator: Bonjour
+            //GermanTranslator: Hallo
+            //SpanishTranslator: Hola
         }
     }
 }
