@@ -13,7 +13,8 @@ namespace Command
 
             Invoker invoker = new Invoker(logger);
             var reciever = new Receiver(logger);
-            invoker.SetOnStart(new SimpleCommand(logger, reciever, "Execute Command."));
+            invoker.SetOnStart(new SimpleCommand(logger, reciever, "Start Execute Command."));
+            invoker.SetOnFinish(new SimpleCommand(logger, reciever, "Finish Execute Command."));
             invoker.DoWork();
 
             Console.Read();
